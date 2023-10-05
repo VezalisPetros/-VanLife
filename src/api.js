@@ -28,12 +28,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 
 
-try {
-    const querySnapshot = await getDocs(collection(db, 'vans'));
-    // Process the query results here
-  } catch (error) {
-    console.error('Error querying Firestore:', error);
-  }
+
 
 
 
