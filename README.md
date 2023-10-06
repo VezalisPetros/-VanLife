@@ -9,9 +9,7 @@ VanLife is a web application that allows users to find and rent vans. Whether yo
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-- [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 VanLife offers the following features:
