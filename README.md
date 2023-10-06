@@ -49,25 +49,17 @@ Follow these instructions to set up and run the project on your local machine.
    cd VanLife
 
 ## Contributing
-Contributions are welcome! To contribute to VanLife, please follow these steps:
+Contributions are welcome! If you'd like to contribute to VanLife, please follow these steps:
 
-```bash
-# Step 1: Fork the repository
-git clone https://github.com/VezalisPetros/VanLife.git
-cd VanLife
+1. Fork the repository:
+   ```bash
+   git clone https://github.com/VezalisPetros/VanLife.git
+   cd VanLife
+2.Create a new branch with a descriptive name:
+ ```bash
+ git checkout -b feature/my-feature
 
-# Step 2: Create a new branch with a descriptive name
-git checkout -b feature/my-feature
 
-# Step 3: Make your changes and commit them
-git commit -m "Add a new feature"
-
-# Step 4: Push your changes to your fork
-git push origin feature/my-feature
-
-# Step 5: Create a pull request on the main repository, explaining your changes
-
-   npm install
    
   
 
