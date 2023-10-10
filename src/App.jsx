@@ -23,6 +23,7 @@ import HostVanInfo from './pages/Host/HostVanInfo'
 import NotFound from './pages/NotFound'
 import Login from "./pages/Login"
 import AuthRequired from './components/AuthRequired'
+import SignUp from './pages/SignUp'
 
 const App = () => {
   return (
@@ -35,6 +36,7 @@ const App = () => {
         <Route path="vans" element={<Vans />} />
         <Route path="vans/:id" element={<VanDetail />} />
         <Route path="login"  element={<Login />} />
+        <Route path="signUp"  element={<SignUp />} />
         
 
         <Route element={<AuthRequired/>}>

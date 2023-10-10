@@ -6,17 +6,20 @@ export default function HostVans() {
     const [vans, setVans] = React.useState([])
     const [error, setError] = React.useState(null)
 
+    const idLogged = localStorage.getItem("idLogged")
+    
 
     React.useEffect(() => {
         async function loadVans() {
             try {
-                const data = await getHostVans()
+                const data = await getHostVans(idLogged)
                 setVans(data)
             } catch (err) {
                 setError(err)
             } 
         }
         loadVans()
+        
     }, [])
 
     const hostVansEls = vans.map(van => (
@@ -50,7 +53,11 @@ export default function HostVans() {
                         </section>
 
                     ) : (
-                            <h2>Loading...</h2>
+                            <div className="no-vans-message">
+                                    <h2>It looks like you haven't uploaded a van to your account yet</h2>
+                                    <Link to="../income" className="add-van vibrate-1 ">Add Your Van</Link>
+                            </div>
+                            
                         )
                 }
             </div>

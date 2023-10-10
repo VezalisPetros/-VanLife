@@ -40,7 +40,7 @@ export default function Header() {
                 </span>
             </NavLink>
             <NavLink>
-                <span class="material-symbols-outlined vibrate-1" onClick={fakeLogOut}>
+                <span class="material-symbols-outlined vibrate-1 icons" onClick={fakeLogOut}>
                     logout
                 </span>
             </NavLink>

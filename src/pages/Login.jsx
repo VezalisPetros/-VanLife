@@ -1,5 +1,5 @@
 import React from "react"
-import { useLocation, useNavigate,  } from "react-router-dom"
+import { useLocation, useNavigate, Link  } from "react-router-dom"
 import { loginUser } from "../api"
 
 
@@ -18,15 +18,18 @@ export default function Login() {
         e.preventDefault()
         
         loginUser(loginFormData)
-            .then(data => {
+            .then(id => {
                 
                 localStorage.setItem("loggedin", true)
-                navigate(from, { replace: true }) // use the replace  so if you go back the login page will not saw
+                localStorage.setItem("idLogged",id)
+                navigate(from, { replace: true }) 
                 
             })
             .catch(err => {
                 setError(err)
             })
+
+            
           
     }
 
@@ -72,8 +75,11 @@ export default function Login() {
                     value={loginFormData.password}
                 />
                 <button className="vibrate-1">Log in</button>
-                
             </form>
+            <div className="sign-up">
+                    <div>Not have an account? </div>
+                <Link to="../signUp" className="sign-up-link">Sign up here</Link>
+                </div>
         </div>
     )
 }

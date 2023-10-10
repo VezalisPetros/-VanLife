@@ -10,7 +10,8 @@ import {
     getDocs,
     getDoc,
     query,
-    where
+    where,
+    addDoc
 } from "firebase/firestore/lite"
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -62,8 +63,8 @@ export async function getVan(id) {
 
 
 
-export async function getHostVans() {
-    const q = query(vansCollectionRef, where("hostId", "==", "123")) /// this is hardcoded for  the user 123 and not the one who logs in 
+export async function getHostVans(idLoggedIn) {
+    const q = query(vansCollectionRef, where("hostId", "==", idLoggedIn)) 
     const snapshot = await getDocs(q)
     
     const vans = snapshot.docs.map(doc => ({
@@ -80,6 +81,7 @@ export async function loginUser(creds) {
     try {
         const userQuery = query(usersCollectionRef, where("email", "==", creds.email));
         const userSnapshot = await getDocs(userQuery);
+        const user = await getDocs(userQuery);
         const users = userSnapshot.docs.map((doc) => ({
             ...doc.data(),
             id: doc.id
@@ -96,16 +98,40 @@ export async function loginUser(creds) {
             throw new Error("Try again your password!");
         }
 
-      
+        //Returns the user ID
+      return foundUser.id;
 
-        // If authentication is successful, you can return user data and a token as needed
-        // For example, return the user's data and a dummy token
-        return {
-            user: foundUser,
-            token: "Your authentication token here",
-        };
+       
+        
     } catch (error) {
         console.error("Error in loginUser:", error);
+        throw error; // Rethrow the error for further handling
+    }
+}
+
+
+export async function createUser(userData) {
+    try {
+        // Check if a user with the same email already exists
+        const userQuery = query(usersCollectionRef, where("email", "==", userData.email));
+        const userSnapshot = await getDocs(userQuery);
+        const existingUsers = userSnapshot.docs.map((doc) => doc.data());
+
+        if (existingUsers.length > 0) {
+            throw new Error("A user with this email already exists!");
+        }
+
+        // If no user with the same email exists, add the new user
+        const newUserRef = await addDoc(usersCollectionRef, userData);
+
+         // Access the auto-generated ID for the new user document
+         const newUserId = newUserRef.id;
+
+         // Return the new user ID
+         return newUserId;
+       
+    } catch (error) {
+        console.error("Error in createUser:", error);
         throw error; // Rethrow the error for further handling
     }
 }

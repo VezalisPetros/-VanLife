@@ -735,7 +735,7 @@ i[class*='van-type-'] {
   margin: 0;
   
 }
-.login-first{
+.login-first ,.error-message{
   color: rgb(122, 7, 7);
   display: flex;
   align-items: center;
@@ -747,25 +747,63 @@ i[class*='van-type-'] {
 .side-links span{
   cursor: pointer;;
 }
+.sign-up{
+  display: flex;
+  padding: 20px;
+}
+.sign-up-link{
+  color: #E17654;
+  padding:0px 10px;
+}
+.no-vans-message{
+  display: flex;
+  flex-direction: column;
+  background-color: #FFCC8D;
+  border-radius: 1rem;
+  padding: 80px;
+  justify-content: center;
+  align-items: center;
+}
+.no-vans-message h2{
+  padding: 20px ;
+}
+.add-van{
+  text-decoration: none;
+  color: white;
+  background-color: #E17654;
+  padding: 30px;
+  border-radius: 1rem;
+  width: 200px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
 
 @media (max-width: 1200px) {
 
    nav{
     display: flex;
     justify-content:flex-start;
+    margin: 10px;
+    flex-direction: column;
+    
+    
   }
   .home-link{
     font-size: 18px;
     padding: 1px;
     margin-left: 10px;
     
+    
   }
 
   .side-links{
-    
-    margin: 1px;
+
+    margin: 10px;
     padding: 0;
     display: flex;
+    
     
   }
 
@@ -774,6 +812,7 @@ i[class*='van-type-'] {
     font-size: 15px;
   }
 
+  
   
   .img-logo{
     width: 100px;
@@ -959,8 +998,8 @@ i[class*='van-type-'] {
 
   .login-container{
     
-    height: 40vh;
-    margin: 10vh;
+    height: 60vh;
+    margin: 2vh;
   }
  
   .login-form{
@@ -988,6 +1027,8 @@ i[class*='van-type-'] {
     font-weight: 200;
     margin: 0;
   }
+
+  
 
   
   }
