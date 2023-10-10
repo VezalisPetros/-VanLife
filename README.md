@@ -43,7 +43,7 @@ Follow these instructions to set up and run the project on your local machine.
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/VezalisPetros/VanLife.git
+   git clone https://github.com/VezalisPetros/-VanLife   
    cd VanLife
 
 ## Contributing
