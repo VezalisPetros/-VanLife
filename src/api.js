@@ -1,6 +1,7 @@
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import {getStorage, uploadBytes,ref,getDownloadURL} from "firebase/storage"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 import {
@@ -11,7 +12,8 @@ import {
     getDoc,
     query,
     where,
-    addDoc
+    addDoc,
+    deleteDoc
 } from "firebase/firestore/lite"
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -27,6 +29,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app)
+
+const storage =getStorage(app)
 
 
 
@@ -135,3 +139,63 @@ export async function createUser(userData) {
         throw error; // Rethrow the error for further handling
     }
 }
+
+
+export async function addVan( vanData) {
+    try {
+       
+        await addDoc(vansCollectionRef, vanData);
+
+       
+    } catch (error) {
+        console.error("Error adding van:", error);
+        throw error; // Rethrow the error for further handling
+    }
+}
+
+
+
+
+// Function to upload the selected image to a cloud storage service (Firebase Storage)
+
+
+export async function uploadImage(selectedFile) {
+    const imageRef = ref(storage, `images/${selectedFile.name}`);
+
+    try {
+        // Upload the image to storage
+        await uploadBytes(imageRef, selectedFile);
+
+        // Get the download URL for the uploaded image
+        const downloadURL = await getDownloadURL(imageRef);
+
+        
+        return downloadURL
+        
+    } catch (error) {
+        console.error("Error uploading image:", error);
+        throw error;
+    }
+}
+
+
+
+
+
+export async function deleteVan(vanId) {
+
+
+  try {
+    // Create a reference to the van document using its ID
+    const vanDocRef = doc(vansCollectionRef, vanId);
+
+    // Delete the van document
+    await deleteDoc(vanDocRef);
+
+  } catch (error) {
+    console.error("Error deleting van:", error);
+    throw error; // Rethrow the error for further handling
+  }
+}
+
+

@@ -25,11 +25,19 @@ const SignUp = () => {
   function handleSubmit(e) {
     e.preventDefault()
     
-  
+    // Check if name, email, and password are not empty not further validation
+    if (!signUpFormData.name || !signUpFormData.email || !signUpFormData.password) {
+      setError({ message: 'Please fill in all fields.' });
+      return;
+    }
+
+
+
     createUser(signUpFormData)
-    .then(data => {
+    .then(id => {
                 
       localStorage.setItem("loggedin", true)
+      localStorage.setItem("idLogged",id)
       navigate(from, { replace: true }) // use the replace  so if you go back the login page will not saw
       
   })
@@ -37,8 +45,7 @@ const SignUp = () => {
       setError(err)
   })
 
-  setIdLoggedIn(id);
-  console.log(idLoggedIn)
+  
 
       
 }

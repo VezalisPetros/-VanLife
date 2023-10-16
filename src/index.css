@@ -273,6 +273,8 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  
   
 }
 
@@ -354,6 +356,8 @@ footer {
   
   
 }
+
+
 
 
 
@@ -466,9 +470,19 @@ i[class*='van-type-'] {
   background-color: white;
   margin-bottom: 30px;
   padding: 10px 60px;
+
+  position: relative
   
   
 }
+
+.deleteVan{
+  position: absolute;
+  top :50%;
+  right: 5%;
+  color: rgb(122, 7, 7);
+}
+
 
 .host-van-single > img {
   height: 200px;
@@ -578,6 +592,7 @@ i[class*='van-type-'] {
   margin-bottom: 15px;
   padding-block: 18px;
   padding-left: 24px;
+  
 }
 
 .host-van-single > img {
@@ -628,6 +643,7 @@ i[class*='van-type-'] {
   height: 200px;
   border-radius: 5px;
   margin-right: 20px;
+  
 }
 
 .host-van-detail-info-text > h3 {
@@ -720,6 +736,11 @@ i[class*='van-type-'] {
   padding: 5px;
 }
 
+.login-form input::placeholder{
+  color: black;
+}
+
+
 .login-form button{
   margin: 10px;
   font-size: 20px;
@@ -778,6 +799,204 @@ i[class*='van-type-'] {
   font-weight: bold;
   font-size: 20px;
 }
+.hostVansElements{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.add-another-van{
+  text-decoration: none;
+  color: white;
+  background-color: #E17654;
+  padding: 20px;
+  border-radius: 1rem;
+  width: 200px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 50px;
+ 
+}
+
+.add-van-info-panel{
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.add-van-info{
+
+  background-color: #FFCC8D;
+  width: 50%;
+  
+  margin: 30px;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.add-van-info h3{
+  color: #4D4D4D;
+  text-align: center;
+  font-size: 30px;
+  padding: 20px;
+}
+
+
+
+.van-form{
+  
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  color: #4D4D4D;
+  padding: 50px;
+}
+.button-section{
+  display: flex;
+  
+  justify-content: center;
+  
+}
+.van-form textarea{
+  font-size: 20px;
+  padding: 20px;
+  background-color: #E17654;
+  border: none;
+  border-radius: 1rem;
+  color: white;
+}
+
+textarea::placeholder ,   input::placeholder{
+  color: #FFEAD0; /* Change this to your desired color */
+}
+.van-form input{
+  font-size: 20px;
+  
+  background-color:#E17654 ;
+  border: none;
+  border-radius: 1rem;
+  color: white;
+  padding: 20px;
+}
+
+.name-and-price{
+  display: flex;
+  justify-content: space-around;
+}
+
+.van-price-input{
+  text-align: center;
+  
+}
+
+.input-with-icon {
+  position: relative;
+  
+}
+
+.van-price-input {
+  padding-right: 20px; 
+}
+
+.dollar-sign {
+  position: absolute;
+  top: 50%; /* Adjust as needed for vertical alignment */
+  right: 43%; /* Adjust as needed for horizontal alignment */
+  transform: translateY(-50%);
+  
+  color: #FFEAD0;
+}
+
+.type-and-img{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  
+
+}
+
+
+.type-section select{
+  background-color: #E17654;
+  font-size: 20px;
+  border-radius: 1rem;
+  padding: 20px;
+  color:  #FFEAD0;
+  width: 250px;
+  text-align: center;
+  margin: 20px;
+  
+}
+.img-section {
+  text-align: center;
+  
+}
+
+.custom-file-upload {
+  
+  display: inline-block;
+  padding: 20px;
+  cursor: pointer;
+  background-color: #E17654;
+  color: #FFEAD0;
+  border-radius: 5px;
+  font-size: 20px;
+  width: 250px;
+
+  
+}
+
+.custom-file-upload input[type="file"] {
+  display: none;
+}
+
+.create-van-button{
+  background-color: #E17654;
+  width: 30%;
+  font-size: 20px;
+  padding: 20px;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  margin-top: 100px;
+  font-weight: bold;
+}
+
+.message-created-van{
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #4D4D4D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message-created-van span{
+  
+  margin-right: 10px;
+}
+
+.success{
+  color: #115E59;
+}
+
+ .error{
+  color:rgb(122, 7, 7) ;
+}
+
+
+
+
+
+
+/* You can add more styles as needed */
+
+
 
 
 @media (max-width: 1200px) {
@@ -973,8 +1192,12 @@ i[class*='van-type-'] {
     height: 150px;
     border-radius: 5px;
     margin-right: 17px;
+   
   }
-  
+  .host-van-detail img{
+    max-width: 250px;
+    max-height: 150px;
+  }
   .host-van-info h3 {
     font-size: 20px;
     font-weight: 600;
@@ -1028,7 +1251,24 @@ i[class*='van-type-'] {
     margin: 0;
   }
 
+  .add-van-info{
+
+   width: 100%;
+   margin : 50px 0px;
+ 
   
+  }
+
+  .name-and-price{
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+
+  
+  .create-van-button{
+      width: 60%;
+  }
 
   
   }

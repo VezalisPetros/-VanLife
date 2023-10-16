@@ -8,7 +8,6 @@ import About from './pages/About'
 import Vans from "./pages/Vans/Vans"
 import VanDetail from "./pages/Vans/VanDetail"
 import Dashboard from "./pages/Host/Dashboard"
-import Income from "./pages/Host/Income"
 import Reviews from "./pages/Host/Reviews"
 import Layout from "./components/Layout"
 import HostLayout from "./components/HostLayout"
@@ -24,6 +23,7 @@ import NotFound from './pages/NotFound'
 import Login from "./pages/Login"
 import AuthRequired from './components/AuthRequired'
 import SignUp from './pages/SignUp'
+import AddVan from './pages/Host/AddVan'
 
 const App = () => {
   return (
@@ -42,7 +42,7 @@ const App = () => {
         <Route element={<AuthRequired/>}>
           <Route path="host" element={<HostLayout />}>
             <Route index element={<Dashboard />} />
-            <Route path="income" element={<Income />} />
+            <Route path="addVan" element={<AddVan />} />
             <Route path="reviews" element={<Reviews />} />
             <Route path="vans" element={<HostVans />} />
             <Route path="vans/:id" element={<HostVanDetail />} >
