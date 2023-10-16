@@ -15,8 +15,16 @@ VanLife is a web application that allows users to find and rent vans. Whether yo
 VanLife offers the following features:
 
 - **About Page**: Provides information about the website and its purpose.
+
 - **Vans Page**: Displays a list of available vans, each with detailed information including price, description, and van type. Users can search for vans based on various requirements, such as van type.
-- **Host Page**: Allows registered hosts to manage and list their vans for rent. You must log in to access the host page, and you can also log out to sign in with a different account.
+
+- **Host Page**: The Host Page empowers registered hosts with the following capabilities:
+  - Create Your Van Listing: Hosts can create and publish their own van listings, providing comprehensive details, including pricing, descriptions, and van types.
+  - Delete Your Van Listings: Hosts have the flexibility to remove their van listings from the platform.
+  - User Authentication: Users must log in to access the Host Page. If you don't have an account, there is a user-friendly signup page to create one.
+
+- **Login Page**: Provides a secure login page for registered users to access their accounts. If you don't have an account, there is also a signup page to create one.
+
 - **Web Responsive**: The site is web responsive, ensuring a seamless user experience on both desktop and mobile devices.
 
 ## Demo
