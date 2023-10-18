@@ -990,7 +990,18 @@ textarea::placeholder ,   input::placeholder{
 }
 
 
+.van-image {
+  width: 800px; /* Set the desired width */
+  height: 500px; /* Set the desired height */
+  object-fit: cover; /* Maintain aspect ratio and crop as necessary */
+}
 
+
+.van-image-host{
+  width: 200px; /* Set the desired width */
+  height: 400px; /* Set the desired height */
+  object-fit: cover; /* Maintain aspect ratio and crop as necessary */
+}
 
 
 
@@ -1270,6 +1281,17 @@ textarea::placeholder ,   input::placeholder{
       width: 60%;
   }
 
+  .van-image {
+    width: 250px; /* Set the desired width */
+    height: 100px; /* Set the desired height */
+    object-fit: cover; /* Maintain aspect ratio and crop as necessary */
+  }
+
+  .van-image-host{
+    width: 150px; /* Set the desired width */
+    height: 20px; /* Set the desired height */
+    object-fit: cover; /* Maintain aspect ratio and crop as necessary */
+  }
   
   }
  

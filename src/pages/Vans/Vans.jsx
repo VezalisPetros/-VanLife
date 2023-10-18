@@ -30,7 +30,7 @@ export default function Vans() {
             <Link to={van.id} 
                   state={{ search: searchParams.toString(),
                            type :typeFilter }}>
-                <img src={van.imageUrl}  />
+                <img src={van.imageUrl} className="van-image"/>
                 <div className="van-info">
                     <h3>{van.name}</h3>
                     <p>${van.price}<span>/day</span></p>
