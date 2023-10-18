@@ -28,7 +28,7 @@ VanLife offers the following features:
 - **Web Responsive**: The site is web responsive, ensuring a seamless user experience on both desktop and mobile devices.
 
 ## Demo
-Check out the live demo of VanLife [here](https://dashing-florentine-40476b.netlify.app/).
+Check out the live demo of VanLife [here](https://main--dashing-florentine-40476b.netlify.app/).
 
 **Demo Account Login:**
 - Email: b@b.com
